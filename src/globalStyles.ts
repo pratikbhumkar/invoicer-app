@@ -6,5 +6,8 @@ const GlobalStyles = createGlobalStyle`
     .header{
         color: #001052
     }
+    .sub-header{
+        color: #5A6C80
+    }
 `
 export default GlobalStyles
