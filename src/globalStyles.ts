@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
     body{
         background-color: #F6F6F6;
@@ -6,5 +6,5 @@ const GlobalStyles = createGlobalStyle`
     .header{
         color: #001052
     }
-`;
-export default GlobalStyles;
+`
+export default GlobalStyles

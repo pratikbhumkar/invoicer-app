@@ -18,6 +18,7 @@
         "@typescript-eslint/return-await": "off",
         "@typescript-eslint/triple-slash-reference": "off",
         "prettier/prettier": ["error"],
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/space-before-function-paren": "off"
     }
 }
