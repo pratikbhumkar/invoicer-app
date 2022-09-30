@@ -58,6 +58,8 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "eslint-config-standard-with-typescript": "^23.0.0"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-prettier": "^4.2.1"
   }
 }

@@ -1,3 +1,9 @@
-import { Header } from '../components/Header'
+import { Header } from '../components/Header';
 
-export const Invoices = (): JSX.Element => { return <div><Header headerText={'Billing & Invoices'}/></div> }
+export const Invoices = (): JSX.Element => {
+  return (
+    <div>
+      <Header headerText={'Billing & Invoices'} />
+    </div>
+  );
+};
