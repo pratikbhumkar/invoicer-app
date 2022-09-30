@@ -3,7 +3,8 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "standard-with-typescript",
+    "extends": ["standard-with-typescript", "prettier","plugin:react/recommended", "plugin:prettier/recommended"],
+    "plugins": ["prettier"],
     "overrides": [
     ],
     "parserOptions": {
@@ -15,6 +16,9 @@
         "@typescript-eslint/restrict-template-expressions": "off",
         "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/return-await": "off",
-        "@typescript-eslint/triple-slash-reference": "off"
+        "@typescript-eslint/triple-slash-reference": "off",
+        "prettier/prettier": ["error"],
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/space-before-function-paren": "off"
     }
 }
