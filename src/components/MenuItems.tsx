@@ -7,15 +7,19 @@ const StyledIcon = styled.img`
   width: 30px;
   height: 30px;
   padding-right: 10px;
+  margin-bottom: 30px;
 `
-const StyledIconContainer = styled.div`
+const StyledIconContainer = styled.button`
   display: flex;
   padding: 10px 20px 0px 30px;
   height: 30px;
+  border: none;
+  background-color: transparent;
 `
 const StyledMenuItem = styled.p`
   align-self: center;
   font-size: 20px;
+  padding-top 9px;
 `
 const MenuItemContainer = styled.div`
   padding-top: 20px;
@@ -25,7 +29,7 @@ export const MenuItems = (): JSX.Element => {
   return (
     <MenuItemContainer>
       <div>
-        <StyledIconContainer onClick={() => navigateTo('/')}>
+        <StyledIconContainer onClick={() => navigateTo('/')} data-testid="invoice-container">
           <StyledIcon src={InvoiceIcon} alt="Invoice icon" />
           <StyledMenuItem className="sub-header">Invoice</StyledMenuItem>
         </StyledIconContainer>

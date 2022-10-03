@@ -1,9 +1,9 @@
-import { Header } from '../components/Header'
+import { PageHead } from '../components/PageHead'
 
 export const Customer = (): JSX.Element => {
   return (
     <div>
-      <Header headerText={'Customer'} />
+      <PageHead pageHeaderText={'Customer'} pageSubHeaderText={'Manage all your Customers'} />
     </div>
   )
 }
