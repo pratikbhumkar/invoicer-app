@@ -4,7 +4,12 @@ import { PageHead } from './PageHead'
 describe('header', () => {
   test('should render the Page Header correctly', async () => {
     await render(
-      <PageHead pageHeaderText="Customer" pageSubHeaderText="Manage all your Customers" />
+      <PageHead
+        pageHeaderText="Customer"
+        pageSubHeaderText="Manage all your Customers"
+        activeTab=""
+        baseLocation="customer"
+      />
     )
     expect(await screen.findByText('Manage all your Customers')).toBeVisible()
     expect(await screen.findByText('Customer')).toBeVisible()

@@ -9,5 +9,8 @@ const GlobalStyles = createGlobalStyle`
     .sub-header{
         color: #5A6C80
     }
+    .active{
+        color: #001052;
+    }
 `
 export default GlobalStyles

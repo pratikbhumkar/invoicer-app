@@ -29,13 +29,15 @@ export const MenuItems = (): JSX.Element => {
   return (
     <MenuItemContainer>
       <div>
-        <StyledIconContainer onClick={() => navigateTo('/')} data-testid="invoice-container">
+        <StyledIconContainer
+          onClick={() => navigateTo('/invoice/create')}
+          data-testid="invoice-container">
           <StyledIcon src={InvoiceIcon} alt="Invoice icon" />
           <StyledMenuItem className="sub-header">Invoice</StyledMenuItem>
         </StyledIconContainer>
       </div>
       <div>
-        <StyledIconContainer onClick={() => navigateTo('/customer')}>
+        <StyledIconContainer onClick={() => navigateTo('/customer/create')}>
           <StyledIcon src={CustomerIcon} alt="Customer logo" />
           <StyledMenuItem className="sub-header">Customer</StyledMenuItem>
         </StyledIconContainer>

@@ -6,6 +6,8 @@ export const Invoices = (): JSX.Element => {
       <PageHead
         pageHeaderText={'Billing & Invoices'}
         pageSubHeaderText={'Manage all your invoices'}
+        activeTab="create"
+        baseLocation="invoice"
       />
     </div>
   )
