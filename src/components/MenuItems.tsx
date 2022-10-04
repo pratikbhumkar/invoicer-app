@@ -11,15 +11,14 @@ const StyledIcon = styled.img`
 `
 const StyledIconContainer = styled.button`
   display: flex;
-  padding: 10px 20px 0px 30px;
-  height: 30px;
+  padding: 10px 30px 0px 30px;
+  height: 40px;
   border: none;
   background-color: transparent;
 `
 const StyledMenuItem = styled.p`
   align-self: center;
   font-size: 20px;
-  padding-top 9px;
 `
 const MenuItemContainer = styled.div`
   padding-top: 20px;
