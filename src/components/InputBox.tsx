@@ -3,7 +3,7 @@ import styled from 'styled-components'
 interface props {
   title: string
   variant?: string
-  value: string
+  value: string | undefined | number
   type?: string
   required?: boolean
   min?: number
