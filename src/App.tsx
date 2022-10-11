@@ -4,6 +4,8 @@ import { Sidebar } from './components/Sidebar'
 import GlobalStyles from './globalStyles'
 import { routes } from './routes'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { rootGlobalState } from './store/rootGlobalState'
 
 const GlobalContainer = styled.div`
   display: flex;
@@ -14,7 +16,9 @@ function App(): JSX.Element {
       <GlobalStyles />
       <Router>
         <Sidebar />
-        <Container>{routes()}</Container>
+        <Provider store={rootGlobalState}>
+          <Container>{routes()}</Container>
+        </Provider>
       </Router>
     </GlobalContainer>
   )
