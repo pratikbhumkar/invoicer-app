@@ -1,21 +1,10 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
-import { InputBox } from '../components/InputBox'
-import { PageHead } from '../components/PageHead'
-import { Customer } from '../interfaces/Customer'
-import { addCustomer } from '../store/customerSlice'
-
-const StyledContainer = styled.div`
-  display: flex;
-`
-export const StyledButton = styled.button`
-  width: 200px;
-  height: 30px;
-  margin: 50px 150px 0px 20px;
-  background-color: #7687fc;
-  border: none;
-`
+import { InputBox } from '../../components/InputBox/InputBox'
+import { PageHead } from '../../components/PageHead'
+import { Customer } from '../../interfaces/Customer'
+import { addCustomer } from '../../store/customerSlice'
+import { StyledButton, StyledContainer } from './CreateCustomerStyles'
 
 export const CreateCustomer = (): JSX.Element => {
   const [customer, setCustomer] = useState<Partial<Customer>>()

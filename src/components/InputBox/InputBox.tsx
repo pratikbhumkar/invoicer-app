@@ -1,6 +1,11 @@
-import styled from 'styled-components'
+import {
+  StyledInputContainer,
+  StyledInputTitle,
+  StyledInputBox,
+  StyledInputBoxLong
+} from './InputBoxStyles'
 
-interface props {
+export interface props {
   title: string
   variant?: string
   value: string | undefined | number
@@ -8,32 +13,9 @@ interface props {
   required?: boolean
   min?: number
   max?: number
+  readOnly?: boolean
   onChange: (event: any) => any
 }
-
-const StyledInputContainer = styled.div`
-  flex-direction: column;
-  width: 450px;
-  display: flex;
-  margin: 20px;
-`
-
-export const StyledInputTitle = styled.span`
-  padding: 5px;
-  font-size: 18px;
-`
-
-const StyledInputBox = styled.input`
-  line-height: 30px;
-  border: none;
-  border-radius: 5px;
-`
-const StyledInputBoxLong = styled.input`
-  line-height: 30px;
-  border: none;
-  border-radius: 5px;
-  width: 550px;
-`
 
 export const InputBox = ({
   title,
@@ -43,6 +25,7 @@ export const InputBox = ({
   required,
   max,
   min,
+  readOnly,
   onChange
 }: props): JSX.Element => {
   return (
@@ -51,6 +34,7 @@ export const InputBox = ({
       {variant !== 'long' ? (
         <StyledInputBox
           value={value}
+          readOnly={readOnly}
           required={required}
           type={type}
           max={max}
@@ -59,6 +43,7 @@ export const InputBox = ({
         />
       ) : (
         <StyledInputBoxLong
+          readOnly={readOnly}
           value={value}
           required={required}
           onChange={(event) => onChange(event)}
