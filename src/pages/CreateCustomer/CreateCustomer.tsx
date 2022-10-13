@@ -1,3 +1,4 @@
+import { Dispatch } from '@reduxjs/toolkit'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { InputBox } from '../../components/InputBox/InputBox'
@@ -6,9 +7,13 @@ import { Customer } from '../../interfaces/Customer'
 import { addCustomer } from '../../store/customerSlice'
 import { StyledButton, StyledContainer } from './CreateCustomerStyles'
 
+export const submitCreateCustomer = (customer: Customer, dispatch: Dispatch): void => {
+  dispatch(addCustomer(customer))
+}
+
 export const CreateCustomer = (): JSX.Element => {
-  const [customer, setCustomer] = useState<Partial<Customer>>()
   const dispatch = useDispatch()
+  const [customer, setCustomer] = useState<Partial<Customer>>()
   return (
     <div>
       <PageHead
@@ -20,10 +25,11 @@ export const CreateCustomer = (): JSX.Element => {
       <form
         onSubmit={(event) => {
           event.preventDefault()
-          dispatch(addCustomer(customer as Customer))
+          submitCreateCustomer(customer as Customer, dispatch)
         }}>
         <StyledContainer>
           <InputBox
+            testId="customerName"
             title="Customer Name"
             required={true}
             value={customer?.name}
@@ -36,6 +42,7 @@ export const CreateCustomer = (): JSX.Element => {
             }
           />
           <InputBox
+            testId="customerAddress"
             title="Customer Address"
             required={true}
             variant="long"
@@ -50,6 +57,7 @@ export const CreateCustomer = (): JSX.Element => {
         </StyledContainer>
         <StyledContainer>
           <InputBox
+            testId="customerSubject"
             title="Customer Subject"
             value={customer?.subject}
             required={true}
@@ -61,6 +69,7 @@ export const CreateCustomer = (): JSX.Element => {
             }
           />
           <InputBox
+            testId="phoneNumber"
             title="Phone number"
             required={true}
             value={customer?.phone_number}
@@ -77,6 +86,7 @@ export const CreateCustomer = (): JSX.Element => {
         </StyledContainer>
         <StyledContainer>
           <InputBox
+            testId="rate"
             required={true}
             title="Rate per hour"
             type="number"
@@ -90,6 +100,7 @@ export const CreateCustomer = (): JSX.Element => {
             }
           />
           <InputBox
+            testId="email"
             title="Email Address"
             required={true}
             type="email"
@@ -104,6 +115,7 @@ export const CreateCustomer = (): JSX.Element => {
         </StyledContainer>
         <StyledContainer>
           <InputBox
+            testId="abn"
             title="ABN/ACN"
             value={customer?.abn}
             type="number"
