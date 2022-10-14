@@ -1,9 +1,14 @@
-import { Header } from '../components/Header'
+import { PageHead } from '../components/PageHead'
 
 export const Invoices = (): JSX.Element => {
   return (
     <div>
-      <Header headerText={'Billing & Invoices'} />
+      <PageHead
+        pageHeaderText={'Billing & Invoices'}
+        pageSubHeaderText={'Manage all your invoices'}
+        activeTab="create"
+        baseLocation="invoice"
+      />
     </div>
   )
 }
