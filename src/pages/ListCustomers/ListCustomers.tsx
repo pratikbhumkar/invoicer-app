@@ -10,7 +10,8 @@ import {
   StyledTableRow
 } from './ListCustomersStyles'
 
-const generateTableRows = (customers: Customer[]): JSX.Element[] => {
+export const generateTableRows = (customers: Customer[]): JSX.Element[] => {
+  console.log('===generateTableRows called====', customers)
   return customers.map((customer, index) => (
     <StyledTableRow key={index}>
       <StyledTableData>{customer.name}</StyledTableData>
@@ -33,6 +34,7 @@ const generateTableRows = (customers: Customer[]): JSX.Element[] => {
 
 export const ListCustomers = (): JSX.Element => {
   const customers = useSelector((state: RootGlobalState) => state.customer)
+  console.log('customers', customers)
   return (
     <div>
       <PageHead
@@ -42,17 +44,21 @@ export const ListCustomers = (): JSX.Element => {
         baseLocation="customer"
       />
       <StyledTable>
-        <StyledTableHead>Name</StyledTableHead>
-        <StyledTableHead>Address</StyledTableHead>
-        <StyledTableHead>Phone Number</StyledTableHead>
-        <StyledTableHead>Rate</StyledTableHead>
-        <StyledTableHead>Subject</StyledTableHead>
-        <StyledTableHead>Email</StyledTableHead>
-        <StyledTableHead>ABN/ACN</StyledTableHead>
-        <StyledTableHead>Disabled</StyledTableHead>
-        <StyledTableHead>Invoice</StyledTableHead>
-        <StyledTableHead>Customer</StyledTableHead>
-        {customers.length > 0 && generateTableRows(customers)}
+        <thead>
+          <tr>
+            <StyledTableHead>Name</StyledTableHead>
+            <StyledTableHead>Address</StyledTableHead>
+            <StyledTableHead>Phone Number</StyledTableHead>
+            <StyledTableHead>Rate</StyledTableHead>
+            <StyledTableHead>Subject</StyledTableHead>
+            <StyledTableHead>Email</StyledTableHead>
+            <StyledTableHead>ABN/ACN</StyledTableHead>
+            <StyledTableHead>Disabled</StyledTableHead>
+            <StyledTableHead>Invoice</StyledTableHead>
+            <StyledTableHead>Customer</StyledTableHead>
+          </tr>
+        </thead>
+        <tbody>{customers.length > 0 && generateTableRows(customers)}</tbody>
       </StyledTable>
     </div>
   )
