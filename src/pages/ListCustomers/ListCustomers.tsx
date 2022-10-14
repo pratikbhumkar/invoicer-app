@@ -11,7 +11,6 @@ import {
 } from './ListCustomersStyles'
 
 export const generateTableRows = (customers: Customer[]): JSX.Element[] => {
-  console.log('===generateTableRows called====', customers)
   return customers.map((customer, index) => (
     <StyledTableRow key={index}>
       <StyledTableData>{customer.name}</StyledTableData>
@@ -34,7 +33,6 @@ export const generateTableRows = (customers: Customer[]): JSX.Element[] => {
 
 export const ListCustomers = (): JSX.Element => {
   const customers = useSelector((state: RootGlobalState) => state.customer)
-  console.log('customers', customers)
   return (
     <div>
       <PageHead

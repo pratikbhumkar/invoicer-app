@@ -14,6 +14,7 @@ export interface props {
   min?: number
   max?: number
   readOnly?: boolean
+  testId: string
   onChange: (event: any) => any
 }
 
@@ -26,6 +27,7 @@ export const InputBox = ({
   max,
   min,
   readOnly,
+  testId,
   onChange
 }: props): JSX.Element => {
   return (
@@ -33,6 +35,7 @@ export const InputBox = ({
       <StyledInputTitle> {title} </StyledInputTitle>
       {variant !== 'long' ? (
         <StyledInputBox
+          data-testid={testId}
           value={value}
           readOnly={readOnly}
           required={required}
@@ -43,6 +46,7 @@ export const InputBox = ({
         />
       ) : (
         <StyledInputBoxLong
+          data-testid={testId}
           readOnly={readOnly}
           value={value}
           required={required}
